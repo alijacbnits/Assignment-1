@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assignment1';
+  
+  num1:Number = 0;
+  // num2 = 0;
+  // type = '';
+  result = 0;
+
+  
+  ngOnInit(): void{ }
+
+  printSum(res: any) {
+		this.result = res;
+	}
+
+  // onOptionsSelected(data:any) {
+  //   console.log("data",data.target.value);
+  //   this.type = data.target.value;
+  // }
 }
