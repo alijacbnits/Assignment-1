@@ -17,15 +17,23 @@ export class FormComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log('num1',this.num1);
   }
 
   ngOnChanges(changes:any) {
-    console.log(changes,"changes");
+    if((changes.num1.currentValue !== changes.num1.previousValue)) {
+      this.showResult(changes.num1.currentValue);
+    }
   }
 
   showResult(val:Number) {
-   
+    let result = 0;  //Modify the Value
+
+    if(val > 0) {
+      result = Number(val)*100;
+    } else {
+      result = Number(val)/100;
+    }
+    this.addNumEvent.emit(result);
   
 }
 }

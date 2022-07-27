@@ -1,11 +1,13 @@
 <router-outlet></router-outlet>
+
 <div class="parent">
   <h2>This is Parent Component</h2>
   <div>
-    First Number : <input [(ngModel)]="num1" /> <br/><br/>
+    Enter Number: <input [(ngModel)]="num1" /> <br/><br/>
     <p *ngIf="result">Result: {{result}}</p>	
 </div>
 </div>
+
 <app-form 
   [num1]="num1" 
-  (addNumEvent) = "printSum($event)"></app-form>
+  (addNumEvent)="printResult($event)"></app-form>
